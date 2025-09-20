@@ -90,18 +90,6 @@ app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewRouter);
 app.use("/", userRouter);
 
-
-
-
-app.all(/.*/, (req, res, next) => {
-    next(new ExpressError(404, "Page Not Found"));
-});
-
-app.use((err, req, res, next) => {
-    let { statusCode = 500, message = "Something Went Wrong" } = err;
-    res.status(statusCode).render("listing/error.ejs", { message });
-});
-
 const Listing = require("./models/listing"); // make sure this is imported
 
 app.get("/", async (req, res) => {
@@ -113,6 +101,18 @@ app.get("/", async (req, res) => {
     res.redirect("/listings"); // fallback
   }
 });
+
+
+app.all(/.*/, (req, res, next) => {
+    next(new ExpressError(404, "Page Not Found"));
+});
+
+app.use((err, req, res, next) => {
+    let { statusCode = 500, message = "Something Went Wrong" } = err;
+    res.status(statusCode).render("listing/error.ejs", { message });
+});
+
+
 
 
 const port = process.env.PORT || 8080; // use Render's port if available
