@@ -102,8 +102,16 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render("listing/error.ejs", { message });
 });
 
-app.get("/", (req, res) => {
-  res.redirect("/listings");
+const Listing = require("./models/listing"); // make sure this is imported
+
+app.get("/", async (req, res) => {
+  try {
+    const allListing = await Listing.find({});
+    res.render("listing/index.ejs", { allListing });
+  } catch (e) {
+    req.flash("error", "Cannot load listings");
+    res.redirect("/listings"); // fallback
+  }
 });
 
 
