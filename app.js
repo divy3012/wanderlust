@@ -107,6 +107,7 @@ app.get("/", (req, res) => {
 });
 
 
-app.listen(8080, () => {
-    console.log("server is working");
+const port = process.env.PORT || 8080; // use Render's port if available
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 });
