@@ -1,66 +1,37 @@
-<style>
-  .btn-search {
-    background-color: #fe424d;
-    color: white;
-    border-radius: 25px;
-    padding: 0 1rem;
-  }
-  .btn-search:hover {
-    background-color: #fe424d;
-    color: white;
-  }
-  .btn-search i {
-    display: inline;
-    margin-right: 0.5rem;
-  }
-  .btn-input {
-    border-radius: 25px;
-    padding: 0.5rem 3rem;
-    font-size: 1rem;
-  }
-</style>
 
-<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <!-- Brand -->
     <a class="navbar-brand" href="/listings">
-      <i class="fa-solid fa-compass"></i>
+      <div class="nav-logo">
+        <img src="/images/logo.png" alt="Airbnb logo" class="logo">
+        <h5 class="nav-logo">wanderlust</h5>
+      </div> 
     </a>
 
-    <!-- Toggler for mobile -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <!-- Toggle Button -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Navbar links & form -->
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav me-auto">
-        <a class="nav-item nav-link" href="/listings">Explore</a>
-      </div>
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <!-- LEFT SIDE LINKS -->
+      
 
-      <div class="d-flex align-items-center ms-auto">
-        <!-- Search Form -->
-        <form class="d-flex me-3" role="search">
-          <input class="form-control btn-input me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-search" type="submit">
-            <i class="fa-solid fa-magnifying-glass"></i>Search
-          </button>
-        </form>
-
-        <!-- Links -->
-        <a class="nav-item nav-link me-2" href="/listings/new">Airbnb your home</a>
-
-        <% if(!currUser) { %>
-          <a class="nav-item nav-link me-2" href="/signup"><b>SignUp</b></a>
-          <a class="nav-item nav-link" href="/login"><b>Login</b></a>
-        <% } else { %>
-          <a class="nav-item nav-link" href="/logout">LogOut</a>
-        <% } %>
-      </div>
+      <!-- RIGHT SIDE LINKS -->
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/listings/new">Become a host</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/signup">SignUp</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
-
-<!-- Make sure Bootstrap 5 CSS & JS are loaded -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

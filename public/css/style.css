@@ -80,3 +80,11 @@ body {
     height: 400px;
     width: 80vh;
 }
+.logo {
+    height: 2rem;
+}
+.nav-logo {
+    display: flex;
+    color: #fe424d;
+    font-weight: 400;
+}
