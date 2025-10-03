@@ -1,12 +1,23 @@
+<style>
+  /* Make sure the collapsed menu always stays above page content */
+.navbar-collapse {
+  background-color: #000;  /* your black background */
+  padding: 15px;
+  position: relative;
+  z-index: 1050; /* higher than cards/images */
+}
+.btn {
+  border-radius: 5rem;
+}
 
+</style>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings">
-      <div class="nav-logo">
-        <img src="/images/logo.png" alt="Airbnb logo" class="logo">
-        <h5 class="nav-logo">wanderlust</h5>
-      </div> 
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="/listings">
+      <img src="/images/logo.png" alt="Airbnb logo" class="me-2" style="width:30px;">
+      <span class="fw-bold nav-logo">wanderlust</span>
     </a>
 
     <!-- Toggle Button -->
@@ -17,8 +28,7 @@
 
     <!-- Nav Links -->
     <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- LEFT SIDE LINKS -->
-      
+     
 
       <!-- RIGHT SIDE LINKS -->
       <ul class="navbar-nav ms-auto">
@@ -26,10 +36,10 @@
           <a class="nav-link" href="/listings/new">Become a host</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/signup">SignUp</a>
+          <a class="btn btn-outline-light mx-2" href="/signup">Sign Up</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login">Login</a>
+          <a class="btn btn-danger" href="/login">Login</a>
         </li>
       </ul>
     </div>
